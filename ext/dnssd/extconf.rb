@@ -14,10 +14,12 @@ abort('unable to find dnssd library')
 
 have_macro('htons', 'arpa/inet.h') ||
 have_func('htons', 'arpa/inet.h')  ||
+have_func('htons', 'winsock2.h') ||
 abort("couldn't find htons")
 
 have_macro('ntohs', 'arpa/inet.h') ||
 have_func('ntohs', 'arpa/inet.h')  ||
+have_func('ntohs', 'winsock2.h') ||
 abort("couldn't find ntohs")
 
 # These functions live in netioapi.h on Windows, not net/if.h. The MSDN
